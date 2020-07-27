@@ -1,6 +1,6 @@
-package com.abapplications.revolutproject
+package com.abapplications.revolutproject.ui
 
-interface CurrencyListClickCallback {
+interface CurrencyRatesListClickCallback {
     fun onClick(newBaseCurrency: String)
     fun onCurrencyValueChanged(newCurrencyValue: Double)
 }

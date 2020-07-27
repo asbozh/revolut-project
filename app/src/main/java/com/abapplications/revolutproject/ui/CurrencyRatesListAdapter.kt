@@ -1,4 +1,4 @@
-package com.abapplications.revolutproject
+package com.abapplications.revolutproject.ui
 
 import android.text.Editable
 import android.text.TextWatcher
@@ -8,11 +8,15 @@ import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.abapplications.revolutproject.R
 import com.abapplications.revolutproject.databinding.CurrencyRateListItemBinding
+import com.abapplications.revolutproject.model.Currency
 import java.lang.Exception
 
-class CurrencyListAdapter(private val currencyListClickCallback: CurrencyListClickCallback) :
-    ListAdapter<Currency, CurrencyListAdapter.CurrencyListViewHolder>(CurrencyDiffCallback()) {
+class CurrencyListAdapter(private val currencyRatesListClickCallback: CurrencyRatesListClickCallback) :
+    ListAdapter<Currency, CurrencyListAdapter.CurrencyListViewHolder>(
+        CurrencyDiffCallback()
+    ) {
 
     private val isBaseCurrency = 1
     private val isNotBaseCurrency = 2
@@ -28,8 +32,10 @@ class CurrencyListAdapter(private val currencyListClickCallback: CurrencyListCli
                 parent,
                 false
             )
-        binding.callback = currencyListClickCallback
-        return CurrencyListViewHolder(binding)
+        binding.callback = currencyRatesListClickCallback
+        return CurrencyListViewHolder(
+            binding
+        )
     }
 
     override fun getItemViewType(position: Int): Int {
@@ -58,7 +64,7 @@ class CurrencyListAdapter(private val currencyListClickCallback: CurrencyListCli
                             e.printStackTrace()
                         }
                     }
-                    currencyListClickCallback.onCurrencyValueChanged(newCurrencyValue)
+                    currencyRatesListClickCallback.onCurrencyValueChanged(newCurrencyValue)
                 }
             })
         } else {

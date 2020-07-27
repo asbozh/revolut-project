@@ -1,4 +1,4 @@
-package com.abapplications.revolutproject
+package com.abapplications.revolutproject.model
 
 data class Currency(
     var currency: String,

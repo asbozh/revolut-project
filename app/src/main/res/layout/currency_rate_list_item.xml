@@ -7,11 +7,11 @@
 
         <variable
             name="currency"
-            type="com.abapplications.revolutproject.Currency" />
+            type="com.abapplications.revolutproject.model.Currency" />
 
         <variable
             name="callback"
-            type="com.abapplications.revolutproject.CurrencyListClickCallback" />
+            type="com.abapplications.revolutproject.ui.CurrencyRatesListClickCallback" />
 
     </data>
 

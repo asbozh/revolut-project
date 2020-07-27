@@ -1,4 +1,4 @@
-package com.abapplications.revolutproject.network
+package com.abapplications.revolutproject.model
 
 
 import com.squareup.moshi.Json

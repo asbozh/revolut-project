@@ -1,9 +1,13 @@
-package com.abapplications.revolutproject
+package com.abapplications.revolutproject.utils
 
+import android.view.View
 import android.widget.TextView
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.abapplications.revolutproject.model.Currency
+import com.abapplications.revolutproject.ui.CurrencyListAdapter
+import com.abapplications.revolutproject.R
 import com.google.android.material.textfield.TextInputEditText
 
 
@@ -11,6 +15,11 @@ import com.google.android.material.textfield.TextInputEditText
 fun bindRecyclerView(recyclerView: RecyclerView, data: MutableList<Currency>?) {
     val adapter = recyclerView.adapter as CurrencyListAdapter
     adapter.submitList(data?.toMutableList())
+}
+
+@BindingAdapter("app:visibleGone")
+fun showHide(view: View, show: Boolean) {
+    view.visibility = if (show) View.VISIBLE else View.GONE
 }
 
 @BindingAdapter("app:srcFlagPic")

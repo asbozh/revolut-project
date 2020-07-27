@@ -1,5 +1,6 @@
 package com.abapplications.revolutproject.network
 
+import com.abapplications.revolutproject.model.CurrencyRates
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import retrofit2.Retrofit
